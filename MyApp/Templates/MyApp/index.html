@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head> 
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA Compatible" content="IE = edge"/>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+      <title> DJANGO IN WEB</title>
+      
+    </head>
+      
+    <body>
+       <seection>
+
+         <h2> I will be magical with a book app</h2>
+         <h3> PROGRAMMING BOOKS</h4>
+
+         <div class = "grid">
+
+            {% for book in books%}
+            
+            <a href = "{% url 'book.show' book.id %}" target = "_blank">
+
+            <div class = "flex-justify-center">
+               <p> {{book.title}} </p>
+               <img src = "{% static 'book.imageUrl' %}" width="200px" height="300px"/>
+            </div>
+
+            </a>
+
+            {% endfor %}
+
+         </div>
+
+       </seection>
+        
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA Compatible" content="IE = edge"/>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+      <title> {% block title %} DJANGO IN WEB {% endblock %}</title>
+      {% block link %} {% endblock %}
+      
+    </head>
+      
+    <body>
+
+      <nav>
+
+        <div>
+          <h1 text-color="blue">MY BOOK STORE</h1>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div>
+          <a href = "{% url 'logout' %}"> LOGOUT </a>
+        </div>
+        {% else %}
+        <div>
+          <a href = "{% url 'login' %}"> LOGIN </a>
+        </div>
+        {% endif %}
+
+      </nav>
+
+       <seection>
+           {% block content %}
+           {% endblock %}
+       </seection>
+        
+    </body>
+</html>

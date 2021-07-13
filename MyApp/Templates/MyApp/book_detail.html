@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Book - {{book.title}} {% endblock %}
+
+{% block link %}  <link rel = "stylesheet" href = "{% static 'MyApp/styles.css' %}"/> {% endblock %}
+
+{% block content %}
+      <h2> {{book.title}} </h2>
+
+      <div class = "flex-justify-center">
+        <img src = "{{ book.image.url }}" width = "250px" height = "300px"/>
+      </div>
+
+      <div>
+        <h3>
+          {% for nameA in author %}
+            <a href = "{% url 'author.book' author %}"> {{nameA}},  </a>
+          {% endfor %}
+        </h3>
+      </div>
+
+      <h4> {{book.pageCount}} </h4>
+      <h4> {{book.shortDescription}} </h4>
+      <h4> {{book.longDescription}}</h4>
+      <img src="{% static 'MyApp/Jesus.jpg' %}" width="200px" height="200px"/>
+
+      {% if user.is_authenticated %}  
+      <form method = "POST" action = "{% url 'book.review' book.id %}" enctype = "multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit"> Submit </button>
+      </form>
+      {% else %}
+      <p>
+        <a href = "{% url 'login' %}?next={{request.path}}">Login</a> in order to write your review!
+      </p>
+      {% endif %}
+
+      <div>
+        {% for review in reviews %}
+        <div>
+          <h3>{{ review.user }}</h3>
+          <p>{{ review.created_at }}</p>
+          <p> {{ review.body }} </p>
+          {% if review.image %}
+          <img src = "{{ review.image.url }}" width = "100px" height = "100px" />
+          {% endif %}
+        </div>
+        {% endfor%}
+      </div>
+{% endblock %}
+          
+      

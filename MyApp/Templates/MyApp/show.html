@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA Compatible" content="IE = edge"/>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+      <title> DJANGO IN WEB</title>
+      <link rel = "stylesheet" href = "{% static 'MyApp/styles.css' %}"/>
+    </head>
+      
+    <body>
+       <seection>
+
+         <h2> {{book.title}} </h2>
+         <div class = "flex-justify-center">
+           <img src = "{% static 'book.imageUrl' %}" width = "200px" height = "300px"/>
+         </div>
+         <h3> {{book.authors}} </h3>
+         <h4> {{book.pageCount}} </h4>
+         <h4> {{book.shortDescription}} </h4>
+         <h4> {{book.longDescription}}</h4>
+          <img src="{% static 'MyApp/Chitoon.png' %}" width="200px" height="300px"/>
+
+          <form method = "POST" action = "{% url 'book.review' book.id %}">
+            {% csrf_token %}
+            <textarea cols = "80px" rows = "5px" placeholder="Write your review" name="review"></textarea>
+            <button type = "submit"> Submit </button>
+          </form>
+
+          <div>
+            {% for review in reviews %}
+            <p> {{ review.body }} </p>
+            {% endfor%}
+          </div>
+          
+       </seection>
+        
+    </body>
+</html>

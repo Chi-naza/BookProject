@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: GhostNaza@gmail.com
+Date: Sat, 10 Jul 2021 14:59:33 -0000
+Message-ID: <162592917356.808.4884797569630351512@DESKTOP-AG49TCQ>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/Mg/apkv39-d8c593afd8390810ed2c068b5e0eefc0/
+
+Your username, in case you’ve forgotten: GhostNaza
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

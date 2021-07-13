@@ -1,0 +1,26 @@
+{% extends 'base.html' %}    
+
+{% load static %}
+
+
+{% block content %}
+   <h2> I will be magical with a book app</h2>
+   <h3> PROGRAMMING BOOKS</h4>
+
+   <div class = "grid">
+
+      {% for book in book_list %}
+      
+      <a href = "{% url 'book.show' book.id %}" target = "_blank">
+
+      <div class = "flex-justify-center">
+         <p> {{book.title}} </p>
+         <img src = "{{ book.image.url }}" width="200px" height="200px"/>
+      </div>
+
+      </a>
+
+      {% endfor %}
+
+   </div>
+{% endblock %}   
