@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: GhostNaza@gmail.com
+Date: Fri, 30 Jul 2021 16:53:48 -0000
+Message-ID: <162766402870.74164.13753140116158861299@DESKTOP-AG49TCQ>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/reset/Mg/aqm1pn-9dff85c034af0e5c020607c3203e67a1/
+
+Your username, in case you’ve forgotten: GhostNaza
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------

@@ -4,27 +4,29 @@
 
 {% block title %} Book - {{book.title}} {% endblock %}
 
-{% block link %}  <link rel = "stylesheet" href = "{% static 'MyApp/styles.css' %}"/> {% endblock %}
+{% block link %} 
+  <link rel = "stylesheet" href = "{% static 'MyApp/book_detail.css' %}"/> 
+{% endblock %}
 
 {% block content %}
+    <section>
       <h2> {{book.title}} </h2>
 
-      <div class = "flex-justify-center">
+      <div>
         <img src = "{{ book.image.url }}" width = "250px" height = "300px"/>
       </div>
 
       <div>
         <h3>
           {% for nameA in author %}
-            <a href = "{% url 'author.book' author %}"> {{nameA}},  </a>
+            <a id="name-link" href = "{% url 'author.book' author %}"> {{nameA}}  </a>
           {% endfor %}
         </h3>
       </div>
 
-      <h4> {{book.pageCount}} </h4>
-      <h4> {{book.shortDescription}} </h4>
-      <h4> {{book.longDescription}}</h4>
-      <img src="{% static 'MyApp/Jesus.jpg' %}" width="200px" height="200px"/>
+      <h4 id="pages"> Pages : {{book.pageCount}} </h4>
+      <h4 class="description"> {{book.shortDescription}} </h4>
+      <h4 class="description"> {{book.longDescription}}</h4>
 
       {% if user.is_authenticated %}  
       <form method = "POST" action = "{% url 'book.review' book.id %}" enctype = "multipart/form-data">
@@ -34,22 +36,29 @@
       </form>
       {% else %}
       <p>
-        <a href = "{% url 'login' %}?next={{request.path}}">Login</a> in order to write your review!
+        <a id="review-login" href = "{% url 'login' %}?next={{request.path}}">Login</a>
+        <span id="auth">in order to write your review! </span>
       </p>
       {% endif %}
 
       <div>
         {% for review in reviews %}
-        <div>
-          <h3>{{ review.user }}</h3>
-          <p>{{ review.created_at }}</p>
-          <p> {{ review.body }} </p>
+
+        <div id="revBox">
+          <h3 id="revUser">{{ review.user }}
+            <small id="createdAt">{{ review.created_at }}</small>
+          </h3>
+
           {% if review.image %}
-          <img src = "{{ review.image.url }}" width = "100px" height = "100px" />
+          <img src = "{{ review.image.url }}" width = "70px" height = "70px" style="border-radius: 20%;" />
           {% endif %}
+
+          <p id="revBody"> {{ review.body }} </p>
         </div>
+
         {% endfor%}
       </div>
+    </section>
 {% endblock %}
           
       

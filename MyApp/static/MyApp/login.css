@@ -1,0 +1,63 @@
+.lost-home{
+    border: 0.2vw solid black;
+    margin-top: 3vw;
+    background-color: thistle;
+    margin-bottom: 2vw;
+}
+
+.lost-home a{
+    text-decoration: none;
+    color: green;
+    font-family: serif;
+}
+
+.lost-home a:hover{
+    text-decoration: none;
+    color: blue;
+}
+
+.inp{
+    margin-top:2vw;
+    margin-left: 36%;
+}
+
+label{
+    color: purple;
+    font-family: Georgia;
+    font-size: 1.5vw;
+}
+
+input:not(#log-in){
+    width: 20vw;
+    height: 2vw;
+    border-radius: 5%; 
+    border-width: 0 0 0.2vw;
+    outline: 0;
+    margin-left: 2vw; 
+}
+
+input:not(#log-in):focus{
+    border-color: red;  
+}
+
+#log-in{
+    margin-top: 3vw;
+    width: 8vw;
+    height: 2vw;
+    border: 0.2vw solid purple;
+    font-family: monospace;
+}
+
+#log-in:hover{
+    background-color: grey;
+    color: red;
+}
+
+.message{
+    border: 0.1vw dotted blue;
+    width: 40%;
+    text-align: center;
+    background-color: rgb(114, 185, 114);
+    color: rgb(248, 66, 66);
+    margin-left: 30%;
+}

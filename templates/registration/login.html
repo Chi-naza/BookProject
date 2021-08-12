@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block link%}
+    <link rel="stylesheet" type="text/css" href="{% static 'MyApp/login.css' %}" />
+{% endblock %}
+
 
 {% block content%}
 
 {% if form.errors %}
-<p> Your username and password didn't match, please try again. </p>
+<p class="message"> Your username and password didn't match, please try again. </p>
 {% endif %}
 
 {% if next %}
@@ -18,26 +24,34 @@
     {% endif %}
 {% endif %}
 
-<form method = "POST" action = "{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-    </table>
+<section>
+    <form method = "POST" action = "{% url 'login' %}">
+        {% csrf_token %}
 
-    <input type = "submit" value = "login"/>
-    <input type = "hidden" name = "next" value = "{{ next }}"/>
-</form>
+        
 
-{# Assume you setup the password_reset view in your URLconf #}
-<p>
-    <a href= "{% url 'password_reset' %}"> Lost Password? </a>
-</p>
+        <div class="inp">
+            <label for="username">Username</label>
+           <!-- <input type="text" placeholder="Username here" /> --> {{form.username}}
+        </div>
+
+        <div class="inp">
+            <label for="password">Password</label>
+            <!--<input type="password" placeholder="Type in your password" />--> {{form.password}}
+        </div>
+
+        <input id="log-in" type = "submit" value = "login" style="margin-left: 48%;"/>
+        <input type = "hidden" name = "next" value = "{{ next }}"/>
+    </form>
+
+    {# Assume you setup the password_reset view in your URLconf #}
+
+    <button class="lost-home" style="margin-left: 45%;">
+        <a href= "{% url 'password_reset' %}"> Lost Password? </a>
+    </button>
+    <button class="lost-home">
+        <a href= "{% url 'book.all' %}"> Go to Home </a>
+    </button>
+</section>
 
 {% endblock %}

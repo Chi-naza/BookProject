@@ -1,0 +1,31 @@
+
+        label{
+            color: purple;
+            font-family: Georgia;
+            font-size: 1.5vw;
+            margin-left: 35%;
+            display: block;
+            margin-top: 3vw;
+        }
+
+        input[type="email"]{
+            display: block;
+            margin-left: 38%;
+            margin-top: 1.5vw;
+            border-radius: 5%;
+            border-color: purple;
+            height: 2vw;
+            width: 25vw; 
+        }
+
+        input[type="submit"]{
+            display: block;
+            margin-left: 46.5%;
+            margin-top: 0.6vw;
+            border: 0.2vw solid black;
+            background-color: thistle;
+        }
+
+        input[type="submit"]:hover{
+            color: blue;
+        }

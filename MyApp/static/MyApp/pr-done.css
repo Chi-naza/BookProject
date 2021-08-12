@@ -1,0 +1,15 @@
+#div-container{
+    border: 0.3vw solid red;
+}
+
+h2{
+    color: purple;
+    font-family: Georgia;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 2vw;
+}
+
+p{
+    text-align: center;
+}

@@ -2,10 +2,13 @@
 
 {% load static %}
 
+{% block link%}
+   <link rel="stylesheet" type="text/css" href="{% static 'MyApp/book_list.css' %}" />
+{% endblock %}
+
 
 {% block content %}
-   <h2> I will be magical with a book app</h2>
-   <h3> PROGRAMMING BOOKS</h4>
+   <h2> PROGRAMMING BOOKS</h2>
 
    <div class = "grid">
 
@@ -13,11 +16,11 @@
       
       <a href = "{% url 'book.show' book.id %}" target = "_blank">
 
-      <div class = "flex-justify-center">
-         <p> {{book.title}} </p>
-         <img src = "{{ book.image.url }}" width="200px" height="200px"/>
-      </div>
-
+         <div class = "book-box">
+            <img src = "{{ book.image.url }}" width="200px" height="200px"/>
+            <figcaption id="book-name"> {{book.title}} </figcaption>
+         </div>
+      
       </a>
 
       {% endfor %}

@@ -1,0 +1,91 @@
+h2{
+    border: 0.1vw solid yellow;
+    width: 25vw;
+    height: 5vw;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1.3vw;
+    font-size: 1.5vw;
+    color: white;
+    background-color: violet;
+    font-family: Georgia;
+  }
+
+  #name-link{
+    text-decoration: none;
+    margin-left: 0.4vw;
+    
+  }
+
+  #name-link:hover{
+    color:red;
+    padding:1vw;
+  }
+
+  #pages{
+    color: green;
+    font-family: Arial;
+    font-size: 1.5vw;
+  }
+  
+  .description{
+    font-family: Cambria;
+    text-align: justify;
+  }
+
+  #review-login{
+    color: honeydew;
+    border: 0.3vw double red;
+    background-color: green;
+    padding: 0.3vw;
+  }
+
+  #review-login:hover{
+    color: green;
+    border: 0.3vw double white;
+    background-color:black;
+    padding: 0.3vw;
+  }
+
+
+  #auth{
+    font-family: monospace;
+    color: rgb(131, 54, 54);
+    font-size: 1.3vw;
+  }
+
+  #revUser{
+    font-family: Tahoma;
+    color: purple;
+  }
+
+  #createdAt{
+    font-family: monospace;
+    color: salmon;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
+    font-size: 0.9vw;
+    margin-left: 20%;
+  }
+
+  #revBody{
+    font-family: Cambria;
+  }
+
+  button{
+    background-color: crimson;
+    font-family: Trebuchet;
+  }
+
+  button:hover{
+    background-color: pink;
+    font-family: Trebuchet;
+  }
+
+  #revBox{
+    border: 0.1vw dotted green;
+    width:50%;
+    padding: 0.3vw;
+    margin: 0.4vw;
+    background-color: darkgrey;
+    box-shadow: 0.1vw 0.1vw 0.1vw black;
+  }

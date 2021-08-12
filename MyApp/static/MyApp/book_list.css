@@ -1,0 +1,20 @@
+h2{
+    color: red;
+    font-family: Tahoma;
+    text-align: center;
+    margin: 5vw;
+
+ }
+
+ .book-box{
+    border: 0.2vw solid black;
+    float: left;
+    margin-left: 4%;
+    margin-bottom: 2%;
+ }
+
+ #book-name{
+    text-align: center;
+    font-family: Verdana;
+    color: green;
+ }

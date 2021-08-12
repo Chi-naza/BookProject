@@ -1,38 +1,59 @@
 <!DOCTYPE html>
+
+{% load static %}
+
 <html>
     <head> 
       <meta charset="UTF-8"/>
       <meta http-equiv="X-UA Compatible" content="IE = edge"/>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
       <title> {% block title %} DJANGO IN WEB {% endblock %}</title>
-      {% block link %} {% endblock %}
+      <link rel="stylesheet" type="text/css" href="{% static 'MyApp/base.css' %}" />
+
+      {% block link %}   {% endblock %}
       
     </head>
       
     <body>
 
-      <nav>
+      <section id="Flexbox">
 
-        <div>
-          <h1 text-color="blue">MY BOOK STORE</h1>
+        <div id="header">
+
+          <nav>
+            <div id="titleD">
+              <h1 id="title">MY BOOK STORE</h1>
+            </div>
+    
+            <div>
+    
+              {% if user.is_authenticated %}
+              <div class="log">
+                <a href = "{% url 'logout' %}"> Logout </a>
+                <a href = "{% url 'book.all' %}"> Home </a>
+              </div>
+              {% else %}
+              <div class="log">
+                <a href = "{% url 'login' %}"> Login </a>
+                <a href = "{% url 'book.all' %}"> Home </a>
+              </div>
+              {% endif %}
+    
+            </div>
+          </nav>
+
+        </div>
+        
+
+        <div id="body">  
+          <seection>
+            {% block content %}
+            {% endblock %}
+          </seection>
         </div>
 
-        {% if user.is_authenticated %}
-        <div>
-          <a href = "{% url 'logout' %}"> LOGOUT </a>
-        </div>
-        {% else %}
-        <div>
-          <a href = "{% url 'login' %}"> LOGIN </a>
-        </div>
-        {% endif %}
-
-      </nav>
-
-       <seection>
-           {% block content %}
-           {% endblock %}
-       </seection>
+        <div id="footer">Footer</div>
+      </section>
         
     </body>
 </html>

@@ -1,0 +1,29 @@
+h2{
+    color: purple;
+    font-family: Georgia;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 1.8vw;
+}
+
+p{
+    text-align: center;
+}
+
+#log-in{
+    margin-top: 3vw;
+    width: 8vw;
+    height: 1.7vw;
+    border: 0.1vw solid purple;
+    font-family: monospace;
+    font-size: 1.5vw;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-left: 45%;
+}
+
+#log-in:hover{
+    background-color: grey;
+    color: red;
+}
