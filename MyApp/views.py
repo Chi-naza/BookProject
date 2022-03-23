@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from MyApp.models import Book, Review
+from MyApp.models import Book, Review, Author
 from django.http import Http404
 #from django.contrib.auth.mixins import LoginRequiredMixin
 
