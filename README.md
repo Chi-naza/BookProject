@@ -1,4 +1,4 @@
-# Online Bookshop & 
+# Online Bookshop & Library
 
 ## A website for reading and buying books
     You will be able to view the books that are available.
